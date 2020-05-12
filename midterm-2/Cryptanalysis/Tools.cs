@@ -75,12 +75,30 @@ public static class Tools
     
     public static string FilterLetters(string str)
     {
-        throw new NotImplementedException();
+        int l = str.Length;
+        string res = "";
+        for (int i = 0; i < l; i++)
+        {
+            if (LetterIndex(str[i]) != -1)
+            {
+                res = res + str[i];
+            }
+        }
+
+        return res;
     }
 
     public static string Extract(string str, int start, int step)
     {
-        throw new NotImplementedException();
+        int l = str.Length;
+        string res = "";
+        for (int i = start; i < l; i++)
+        {
+            res = res + str[i];
+            i = i + start - 2;
+        }
+
+        return res;
     }
 }
 }
