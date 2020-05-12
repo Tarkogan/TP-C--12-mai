@@ -37,6 +37,10 @@ public static class Tools
         int let = LetterIndex(c);
         int min = Convert.ToInt32(c);
         int maj = 0;
+        if (let == -1 || n == 0)
+        {
+            return c;
+        }
         if (96 < min && min< 123)
         { 
             maj = 97;
@@ -46,11 +50,7 @@ public static class Tools
         {
             maj = 65;
         }
-        if (let == -1 || n == 0)
-        {
-            return c;
-        }
-
+        
        int pos = Modulus((let +n),26);
        char res = Convert.ToChar(pos + maj);
        return res;

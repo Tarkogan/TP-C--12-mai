@@ -18,17 +18,22 @@ public class Caesar
 
     public string Encrypt(string msg)
     {
-        throw new NotImplementedException();
+        Caesar simple = new Caesar(code);
+        
         int l = msg.Length;
+        string res = "";
         for (int i = 0; i < l; i++)
         {
-            
+            //res[i] = Tools.RotChar(msg[i], code);
         }
+
+        return res;
     }
 
     public string Decrypt(string cypherText)
     {
-        throw new NotImplementedException();
+        Caesar simple = new Caesar(code);
+        return "";
     }
     
     public static int GuessKey(string cypherText)
