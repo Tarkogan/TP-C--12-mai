@@ -18,13 +18,14 @@ public class Caesar
 
     public string Encrypt(string msg)
     {
-        Caesar simple = new Caesar(code);
-        
+
         int l = msg.Length;
-        string res = "";
+        string res = ""; 
+        char k;
         for (int i = 0; i < l; i++)
         {
-            //res[i] = Tools.RotChar(msg[i], code);
+            k = Tools.RotChar(msg[i], code);
+            res = res + k;
         }
 
         return res;
@@ -32,13 +33,35 @@ public class Caesar
 
     public string Decrypt(string cypherText)
     {
-        Caesar simple = new Caesar(code);
-        return "";
+        int l = cypherText.Length;
+        string res = ""; 
+        char k;
+        for (int i = 0; i < l; i++)
+        {
+            k = Tools.RotChar(cypherText[i], -code);
+            res = res + k;
+        }
+
+        return res;
     }
     
     public static int GuessKey(string cypherText)
     {
-        throw new NotImplementedException();
+        int[] list = Tools.Histogram(cypherText);
+        int l = list.Length;
+        int max = 0;
+        int pos = 0;
+        for (int i = 0; i < l; i++)
+        {
+            if (max < list[i])
+            {
+                max = list[i];
+                pos = i;
+            }
+        }
+
+        int key = pos - 4;
+        return key;
     }
 }
 }
