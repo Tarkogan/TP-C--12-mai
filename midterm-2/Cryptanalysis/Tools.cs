@@ -68,7 +68,6 @@ public static class Tools
             {
                 res[k] += 1;
             }
-            
         }
         return res;
 
