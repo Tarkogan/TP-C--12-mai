@@ -59,7 +59,19 @@ public static class Tools
 
     public static int[] Histogram(string str)
     {
-        throw new NotImplementedException();
+        int[] res = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        int l = str.Length;
+        for (int i = 0; i < l; i++)
+        {
+            int k = LetterIndex(str[i]);
+            if ( k != -1 )
+            {
+                res[k] += 1;
+            }
+            
+        }
+        return res;
+
     }
     
     public static string FilterLetters(string str)

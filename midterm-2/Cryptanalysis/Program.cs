@@ -7,7 +7,6 @@ internal static class Program
     private static void Main()
     {
         // Put your tests here.
-        Console.WriteLine(Tools.RotChar('a', 27) == 'b');
         Test();
     }
 
