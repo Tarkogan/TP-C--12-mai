@@ -95,7 +95,7 @@ public static class Tools
         for (int i = start; i < l; i++)
         {
             res = res + str[i];
-            i = i + start - 2;
+            i = i + step - 1;
         }
 
         return res;
