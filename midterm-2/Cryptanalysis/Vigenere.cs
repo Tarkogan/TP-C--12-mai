@@ -39,11 +39,21 @@ public class Vigenere
         int w;
         char c;
         string res = "";
+        int k = 0;
         for (int i = 0; i < l; i++)
         {
-            w = Tools.LetterIndex(code[Tools.Modulus(i,3)]);
-            c = Tools.RotChar(msg[i], w);
-            res = res + c;
+            w = Tools.LetterIndex(code[Tools.Modulus(k,3)]);
+            if (Tools.LetterIndex(msg[i]) != -1)
+            {
+                c = Tools.RotChar(msg[i], w);
+                res = res + c;
+                k = k + 1;
+            }
+            else
+            {
+                res = res + msg[i];
+                
+            }
         }
 
         return res;
