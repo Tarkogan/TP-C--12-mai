@@ -7,9 +7,7 @@ internal static class Program
     private static void Main()
     {
         // Put your tests here.
-        Vigenere cypher = new Vigenere("KEY");
-        Console.WriteLine(cypher.Encrypt("Hello world!"));
-        Console.WriteLine(cypher.Decrypt("Rijvs uyvjn!"));
+        
         Test();
     }
 
