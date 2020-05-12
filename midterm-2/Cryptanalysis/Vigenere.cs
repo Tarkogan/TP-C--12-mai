@@ -61,7 +61,29 @@ public class Vigenere
 
     public string Decrypt(string cypherText)
     {
-        throw new NotImplementedException();
+        int l = cypherText.Length;
+        int lk = code.Length;
+        int w;
+        char c;
+        string res = "";
+        int k = 0;
+        for (int i = 0; i < l; i++)
+        {
+            w = Tools.LetterIndex(code[Tools.Modulus(k,3)]);
+            if (Tools.LetterIndex(cypherText[i]) != -1)
+            {
+                c = Tools.RotChar(cypherText[i], -w);
+                res = res + c;
+                k = k + 1;
+            }
+            else
+            {
+                res = res + cypherText[i];
+                
+            }
+        }
+
+        return res;
     }
 
     public static string GuessKeyWithLength(string cypherText, int keyLength)
